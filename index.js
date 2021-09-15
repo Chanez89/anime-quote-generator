@@ -21,6 +21,7 @@ const fetchData = () => {
 }
 
 
+
 const fetchQuery = (searchQuery) => {
     fetch(SEARCH_URL + searchQuery)
         .then((response) => response.json())
@@ -46,6 +47,33 @@ const getSearchString = () => {
     }
 };
 
+
+charSearchInput.addEventListener("keypress", (e) => {
+    if (e.key === "Enter") {
+        e.preventDefault();
+        getSearchString();
+    }
+});
+
+const fetchQuery = (searchQuery) => {
+    fetch(SEARCH_URL + searchQuery)
+        .then((response) => response.json())
+        .then((json) => renderCharacterFactory(json));
+};
+
+
+const renderCharacterFactory = (characterData) => {
+    pageReset();
+    if (!!characterData) {
+        characterData.forEach((character) => renderCharacter(character));
+    }
+
+};
+
+const getSearchString = () => {
+    let searchQuery = charSearchInput.value;
+    if (!!searchQuery) {
+
 const pageReset = () => {
     charSearchInput.value = "";
     charQuotesContainer.innerHTML = "";
@@ -58,13 +86,43 @@ const renderErrorMessage = () => {
     charQuotesContainer.appendChild(errorMessage);
 };
 
+        fetchQuery(searchQuery);
+    } else {
+        renderErrorMessage();
+    }
+};
 
+const pageReset = () => {
+    charSearchInput.value = "";
+    charQuotesContainer.innerHTML = "";
+};
+
+const renderErrorMessage = () => {
+    pageReset();
+    let errorMessage = document.createElement("p");
+    errorMessage.innerText = "Anime Character Not Found";
+    charQuotesContainer.appendChild(errorMessage);
+};
 
 let renderData = (animeInfo) => {
     animeHeader.innerText = `Anime: ${animeInfo.anime}`
     charName.innerText = `Character: ${animeInfo.character}`
     quote.innerText = `Quote: "${animeInfo.quote}"`
 }
+
+
+const renderCharacter = (character) => {
+    let li = document.createElement("li");
+    li.innerText = character.quote;
+    charQuotesContainer.appendChild(li);
+
+let renderData = (animeInfo) => {
+    animeHeader.innerText = `Anime: ${animeInfo.anime}`
+    charName.innerText = `Character: ${animeInfo.character}`
+    quote.innerText = `Quote: "${animeInfo.quote}"`
+}
+
+};
 
 
 const renderCharacter = (character) => {
@@ -75,6 +133,7 @@ const renderCharacter = (character) => {
 };
 
 
+generateBttn.addEventListener('click', fetchData)
 
 generateBttn.addEventListener('click', fetchData)
 
