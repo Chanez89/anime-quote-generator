@@ -1,8 +1,6 @@
 const BASE_URL = 'https://animechan.vercel.app/api/random'
 const SEARCH_URL = 'https://animechan.vercel.app/api/quotes/character?name='
 
-
-
 let animeHeader = document.getElementById('anime-header')
 let charName = document.getElementById('character-name')
 let quote = document.getElementById('quote-p')
@@ -10,7 +8,6 @@ let quoteDiv = document.getElementById('quote-div')
 let generateBttn = document.getElementById('generate-bttn')
 let thumbUpBttn = document.getElementById('thumbs-up')
 let thumbDownBttn = document.getElementById('thumbs-down')
-
 let charSearchInput = document.getElementById('search')
 let charQuotesContainer = document.getElementById('searched-quotes')
 
@@ -20,74 +17,56 @@ const fetchData = () => {
         .then(json => renderData(json))
 }
 
-
 const fetchQuery = (searchQuery) => {
     fetch(SEARCH_URL + searchQuery)
         .then((response) => response.json())
         .then((json) => renderCharacterFactory(json));
-};
-
+}
 
 const renderCharacterFactory = (characterData) => {
-    pageReset();
+    pageReset()
     if (!!characterData) {
         characterData.forEach((character) => renderCharacter(character));
     }
-
-};
+}
 
 const getSearchString = () => {
     let searchQuery = charSearchInput.value;
     if (!!searchQuery) {
-
-        fetchQuery(searchQuery);
+        fetchQuery(searchQuery)
     } else {
-        renderErrorMessage();
+        renderErrorMessage()
     }
-};
-
-
-charSearchInput.addEventListener("keypress", (e) => {
-    if (e.key === "Enter") {
-        e.preventDefault();
-        getSearchString();
-    }
-});
-
-
-
-
-const pageReset = () => {
-    charSearchInput.value = "";
-    charQuotesContainer.innerHTML = "";
-};
-
-const renderErrorMessage = () => {
-    pageReset();
-    let errorMessage = document.createElement("p");
-    errorMessage.innerText = "Anime Character Not Found";
-    charQuotesContainer.appendChild(errorMessage);
-};
-
-
-
-let renderData = (animeInfo) => {
-    animeHeader.innerText = `Anime: ${animeInfo.anime}`
-    charName.innerText = `Character: ${animeInfo.character}`
-    quote.innerText = `Quote: "${animeInfo.quote}"`
 }
 
+const pageReset = () => {
+    charSearchInput.value = ""
+    charQuotesContainer.innerHTML = ""
+}
+
+const renderErrorMessage = () => {
+    pageReset()
+    let errorMessage = document.createElement("p")
+    errorMessage.innerText = "Anime Character Not Found"
+    charQuotesContainer.appendChild(errorMessage)
+}
+
+const renderData = (animeInfo) => {
+    animeHeader.innerText = `Anime: ${animeInfo.anime}`
+    charName.innerText = `Character: ${animeInfo.character}`
+    quote.innerText = `Quote: ${animeInfo.quote}`
+}
 
 const renderCharacter = (character) => {
-    let li = document.createElement("li");
-    li.innerText = character.quote;
-    charQuotesContainer.appendChild(li);
-
+    let li = document.createElement("li")
+    li.innerText = `${character.character.bold()}: ${character.quote}`
+    charQuotesContainer.appendChild(li)
 };
 
-
-
-
 generateBttn.addEventListener('click', fetchData)
-
-
+charSearchInput.addEventListener("keypress", (e) => {
+    if (e.key === "Enter") {
+        e.preventDefault()
+        getSearchString()
+    }
+})
