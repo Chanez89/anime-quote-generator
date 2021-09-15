@@ -1,10 +1,33 @@
 <!doctype html>
 <html>
    <head>
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
       <link rel="stylesheet" href="style.css">
       <script defer src="index.js"></script>
       <title>Anime Quote Generator</title>
    </head>
+   <h3 id="header">Anime Quote Project</h3>
+   <body>
+      <div class="card" id ="header-box-div">
+         <h5 class="card-header" id = "anime-header">Anime Quote Generator</h5>
+         <div class="card-body">
+            <h5 class="card-title" id = "character-name">Character:</h5>
+            <p class="card-text" id = "quote-p">Quote:</p>
+            <button  class="btn btn-primary" id = "generate-bttn" ">Generate Random Quote</button>
+            <!-- <a href="#" class="btn btn-primary">Generate Random Quote</a> -->
+         </div>
+      </div>
+
+      <div class="card" id ="header-box-div2">
+         <h5 class="card-header">Search Quotes By Character Name:</h5>
+         <div class="card-body">
+            <input type="text" placeholder="Search..." id = "search">
+            <div id = "searched-character-title">
+               <div id = "search-char-quotes">
+                  <ul id = "searched-quotes"></ul>
+               </div>
+            </div>
+         </div>
    
    <body>
       <div id ="header-box-div">
@@ -56,8 +79,16 @@
             <!--Comment Box/Submit Button-->
          <!-- </p> -->
       </div>
-      <script src=""></script>
    </body>
+
+   <!--Footer-->
+   <footer class="page-footer">
+
+      <div class="footer">
+         <a href='https://animechan.vercel.app' target="_blank">API Used For Generator</a>
+      </div>
+    
+    </footer>
 
    
    
