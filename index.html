@@ -1,57 +1,43 @@
 <!doctype html>
 <html>
    <head>
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
       <link rel="stylesheet" href="style.css">
       <script defer src="index.js"></script>
       <title>Anime Quote Generator</title>
    </head>
+   <h3 id="header">Anime Quote Project</h3>
    <body>
-      <div id ="header-box-div">
-         <div id = "header-title-div">
-            <h1 id = "anime-header">Anime Quote Generator</h1>
-            <!--Title gets changed to anime title after generate button pressed-->
+      <div class="card" id ="header-box-div">
+         <h5 class="card-header" id = "anime-header">Anime Quote Generator</h5>
+         <div class="card-body">
+            <h5 class="card-title" id = "character-name">Character:</h5>
+            <p class="card-text" id = "quote-p">Quote:</p>
+            <button  class="btn btn-primary" id = "generate-bttn" ">Generate Random Quote</button>
+            <!-- <a href="#" class="btn btn-primary">Generate Random Quote</a> -->
          </div>
       </div>
-      <div id = "generate-bttn-div">
-         <button id = "generate-bttn" ">Generate Quote</button>
-      </div>
-      <div id="character-div">
-         <h3 id = "character-name">Character Name</h3>
-      </div>
-      <!--Character Name-->
-      <div id = "quote-div">
-         <p id = "quote-p">
-            This is an example quote!
-            <!--Quote-->
-         </p>
-      </div>
-      <div id = "form-container-div">
-         <!-- this will contain a Character search form/submit  and the Generate random quote button-->
-         <form id="character-form">
-            <label><strong>Search Quotes By Character Name: </strong></label>
-            <!-- search bar -->
+
+      <div class="card" id ="header-box-div2">
+         <h5 class="card-header">Search Quotes By Character Name:</h5>
+         <div class="card-body">
             <input type="text" placeholder="Search..." id = "search">
-            <!-- this is how you grab in css #character-form input[type=text] -->
-         </form>
+            <div id = "searched-character-title">
+               <div id = "search-char-quotes">
+                  <ul id = "searched-quotes"></ul>
+               </div>
+            </div>
+         </div>
       </div>
-      <div id = "search-char-quotes">
-         <!-- insert a P tag here and make it the Characters name when searched. -->
-         <ul id = "searched-quotes"></ul>
-         <!-- we will create and input the 10 quotes here when searching for a Character -->
-      </div>
-      <div>
-         <!-- <p> -->
-         <span>
-            <button id = "thumbs-up" type="button">👍</button>
-            <button id = "thumbs-down" type="button">👎</button>
-            <!--Thumb Up/Down--> 
-         </span>
-         <!--Submit Box-->
-         <!--Comment Box/Submit Button-->
-         <!-- </p> -->
-      </div>
-      <script src=""></script>
    </body>
-   <a href='https://animechan.vercel.app' target="_blank">API Used For Generator</a>
-   <!--Footer - link to API used-->
+
+   <!--Footer-->
+   <footer class="page-footer font-small blue">
+
+      <div class="footer">
+         <a href='https://animechan.vercel.app' target="_blank">API Used For Generator</a>
+      </div>
+    
+    </footer>
+
 </html>

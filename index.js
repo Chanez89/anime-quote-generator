@@ -68,8 +68,9 @@ let renderData = (animeInfo) => {
 
 
 const renderCharacter = (character) => {
+    boldChar = character.character.bold()
     let li = document.createElement("li");
-    li.innerText = `${character.character}: ${character.quote}`;
+    li.innerText = `${boldChar}: ${character.quote}`;
     charQuotesContainer.appendChild(li);
 };
 
