@@ -3,36 +3,55 @@
    <head>
       <link rel="stylesheet" href="style.css">
       <script defer src="index.js"></script>
-
-      <h1 id = "anime-header">Anime Quote Generator</h1>
-      <!--Title gets changed to anime title after generate button pressed-->
+      <title>Anime Quote Generator</title>
    </head>
    <body>
-     <button id = "generate-bttn" type="submit">Generate Quote</button>
-    
-      <h3 id = "character-name">Character Name</h3>
+      <div id ="header-box-div">
+         <div id = "header-title-div">
+            <h1 id = "anime-header">Anime Quote Generator</h1>
+            <!--Title gets changed to anime title after generate button pressed-->
+         </div>
+      </div>
+      <div id = "generate-bttn-div">
+         <button id = "generate-bttn" ">Generate Quote</button>
+      </div>
+      <div id="character-div">
+         <h3 id = "character-name">Character Name</h3>
+      </div>
       <!--Character Name-->
       <div id = "quote-div">
          <p id = "quote-p">
-             This is an example quote!
+            This is an example quote!
             <!--Quote-->
          </p>
       </div>
-
+      <div id = "form-container-div">
+         <!-- this will contain a Character search form/submit  and the Generate random quote button-->
+         <form id="character-form">
+            <label><strong>Search Quotes By Character Name: </strong></label>
+            <!-- search bar -->
+            <input type="text" placeholder="Search..." id = "search">
+            <!-- this is how you grab in css #character-form input[type=text] -->
+         </form>
+      </div>
+      <div id = "search-char-quotes">
+         <!-- insert a P tag here and make it the Characters name when searched. -->
+         <ul id = "searched-quotes"></ul>
+         <!-- we will create and input the 10 quotes here when searching for a Character -->
+      </div>
       <div>
-         <p>
-            <span>
-                <button id = "thumbs-up" type="button">👍</button>
-                <button id = "thumbs-down" type="button">👎</button>
-               <!--Thumb Up/Down--> 
-            </span>
-            <!--Submit Box-->
-            <!--Comment Box/Submit Button-->
-         </p>
+         <!-- <p> -->
+         <span>
+            <button id = "thumbs-up" type="button">👍</button>
+            <button id = "thumbs-down" type="button">👎</button>
+            <!--Thumb Up/Down--> 
+         </span>
+         <!--Submit Box-->
+         <!--Comment Box/Submit Button-->
+         <!-- </p> -->
       </div>
       <script src=""></script>
    </body>
-
-   <a href='https://animechan.vercel.app'>API Used For Generator</a>
+   <a href='https://animechan.vercel.app' target="_blank">API Used For Generator</a>
    <!--Footer - link to API used-->
 </html>
