@@ -35,3 +35,18 @@ body{
     color: white;
     text-align: center;
   }
+  
+  a:link, a:visited {
+    background-color: rgba(65, 6, 88, 0);  
+    color: rgb(180, 174, 180);
+    border: 2px solid rgb(61, 3, 58);
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+  }
+  
+  a:hover, a:active {
+    background-color: rgb(122, 17, 17);
+    color: white;
+  }
