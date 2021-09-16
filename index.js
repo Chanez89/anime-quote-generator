@@ -59,11 +59,12 @@ const renderData = (animeInfo) => {
 
 const renderCharacter = (character) => {
     let li = document.createElement("li")
-    li.innerText = `${character.character.bold()}: ${character.quote}`
+    li.innerHTML = `${character.character.bold()}: ${character.quote}`
     charQuotesContainer.appendChild(li)
 };
 
 generateBttn.addEventListener('click', fetchData)
+
 charSearchInput.addEventListener("keypress", (e) => {
     if (e.key === "Enter") {
         e.preventDefault()

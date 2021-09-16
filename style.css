@@ -2,15 +2,27 @@ body{
     margin-top: 40px;
     margin-left: 40px;
     margin-right: 40px;
+    background-color: #222222;
 }
 
 #header{
     text-align: center;
     padding-bottom: 25px;
+    color: white;
+}
+
+.card{
+    background-color: #444444;
+    color: white;
 }
 
 #header-box-div{
 
+}
+
+.btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited{
+    background-color: #555555;
+    border-color: #555555;
 }
 
 #header-box-div2{
@@ -22,10 +34,22 @@ body{
     */
 }
 
-#search{
-    text-align: center;
+#searched-quotes{
+    padding-top: 25px;
 }
 
+/* Search Bar */
+#search {
+    margin-bottom: auto;
+    margin-top: 20px;
+    height: 50px;
+    width: 500px;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* Footer */
 .footer {
     position: fixed;
     left: 0;
@@ -34,9 +58,9 @@ body{
     background-color: black;
     color: white;
     text-align: center;
-  }
+}
   
-  a:link, a:visited {
+a:link, a:visited {
     background-color: rgba(65, 6, 88, 0);  
     color: rgb(180, 174, 180);
     border: 2px solid rgb(61, 3, 58);
@@ -44,9 +68,9 @@ body{
     text-align: center;
     text-decoration: none;
     display: inline-block;
-  }
+}
   
-  a:hover, a:active {
+a:hover, a:active {
     background-color: rgb(122, 17, 17);
     color: white;
-  }
+}
