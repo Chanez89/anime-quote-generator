@@ -20,12 +20,14 @@ const fetchData = () => {
 const fetchQuery = (searchQuery) => {
     fetch(SEARCH_URL + searchQuery)
         .then((response) => response.json())
-        .then((json) => renderCharacterFactory(json));
+        .then((json) => renderCharacterFactory(json))
 }
 
 const renderCharacterFactory = (characterData) => {
     pageReset()
-    if (!!characterData) {
+    if (!!characterData.error) {
+        renderErrorMessage()
+    } else {
         characterData.forEach((character) => renderCharacter(character));
     }
 }
@@ -34,8 +36,8 @@ const getSearchString = () => {
     let searchQuery = charSearchInput.value;
     if (!!searchQuery) {
         fetchQuery(searchQuery)
-    } else {
-        renderErrorMessage()
+    // } else {
+    //     renderErrorMessage()
     }
 }
 
