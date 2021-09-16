@@ -1,12 +1,18 @@
 body{
     margin-top: 40px;
     margin-left: 40px;
-    margin-right: 40px
+    margin-right: 40px;
 }
+
 #header{
     text-align: center;
-    padding-bottom: 25px
+    padding-bottom: 25px;
 }
+
+#header-box-div{
+
+}
+
 #header-box-div2{
     margin-top: 50px;
     /*
@@ -15,6 +21,11 @@ body{
     flex-wrap: wrap
     */
 }
+
+#search{
+    text-align: center;
+}
+
 .footer {
     position: fixed;
     left: 0;
@@ -24,7 +35,6 @@ body{
     color: white;
     text-align: center;
   }
-
   
   a:link, a:visited {
     background-color: rgba(65, 6, 88, 0);  
