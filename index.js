@@ -47,16 +47,6 @@ const getSearchString = () => {
 };
 
 
-charSearchInput.addEventListener("keypress", (e) => {
-    if (e.key === "Enter") {
-        e.preventDefault();
-        getSearchString();
-    }
-});
-
-
-
-
 const pageReset = () => {
     charSearchInput.value = "";
     charQuotesContainer.innerHTML = "";
@@ -71,23 +61,40 @@ const renderErrorMessage = () => {
 
 
 
-let renderData = (animeInfo) => {
+const renderData = (animeInfo) => {
     animeHeader.innerText = `Anime: ${animeInfo.anime}`
     charName.innerText = `Character: ${animeInfo.character}`
-    quote.innerText = `Quote: "${animeInfo.quote}"`
+    quote.innerText = `Quote: ${animeInfo.quote}`
 }
+
 
 
 const renderCharacter = (character) => {
     let li = document.createElement("li");
-    li.innerText = character.quote;
-    charQuotesContainer.appendChild(li);
-
+    li.innerText = `${character.character}: ${character.quote}`;
+    charQuotesContainer.appendChild(li);  
 };
 
 
+// let thumbUpBttnVisibility = () =>{
+//  document.getElementById('thumbs-up-div').style.visibility = "visible";
+// }
 
 
 generateBttn.addEventListener('click', fetchData)
 
+charSearchInput.addEventListener("keypress", (e) => {
+    if (e.key === "Enter") {
+        e.preventDefault();
+        getSearchString();
+        // thumbUpBttnVisibility();
+    }
+})
 
+
+//let thumbUpBttnHandler = () =>{
+//  
+// }
+
+
+// thumbUpBttn.addEventListener('click', thumbUpBttnHandler)
