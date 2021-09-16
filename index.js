@@ -10,6 +10,7 @@ let thumbUpBttn = document.getElementById('thumbs-up')
 let thumbDownBttn = document.getElementById('thumbs-down')
 let charSearchInput = document.getElementById('search')
 let charQuotesContainer = document.getElementById('searched-quotes')
+let searchButton = document.getElementById('search-button')
 
 const fetchData = () => {
     fetch(BASE_URL)
@@ -36,8 +37,8 @@ const getSearchString = () => {
     let searchQuery = charSearchInput.value;
     if (!!searchQuery) {
         fetchQuery(searchQuery)
-    // } else {
-    //     renderErrorMessage()
+    } else {
+        renderErrorMessage()
     }
 }
 
@@ -72,4 +73,9 @@ charSearchInput.addEventListener("keypress", (e) => {
         e.preventDefault()
         getSearchString()
     }
+})
+
+searchButton.addEventListener("click", (ee) => {
+        ee.preventDefault()
+        getSearchString()
 })

@@ -49,6 +49,15 @@ body{
     border-radius: 5px;
 }
 
+#search-button {
+    background: url(assets/searchicon_3_25x25.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 50px;
+    width: 50px;
+    background-color: #222222;
+}
+
 /* Footer */
 .footer {
     position: fixed;
