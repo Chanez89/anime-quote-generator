@@ -4,35 +4,45 @@
       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
       <link rel="stylesheet" href="style.css">
       <script defer src="index.js"></script>
-      <link rel="icon" href="assets/rsz_112.jpg" type="image/png">
+      <link rel="icon" href="assets/icon.jpg" type="image/png">
       <title>Anime Quote Generator</title>
    </head>
    <h2 id="header">Anime Quote Project</h2>
    <body>
-      <div class="card" id ="header-box-div">
-         <h5 class="card-header" id = "anime-header">Anime Quote Generator</h5>
+      <div class="card" id="header-box-div">
+         <h5 class="card-header" id="anime-header">Anime Quote Generator</h5>
          <div class="card-body">
-            <h5 class="card-title" id = "character-name">Character:</h5>
-            <p class="card-text" id = "quote-p">Quote:</p>
-            <button  class="btn btn-primary" id = "generate-bttn" ">Generate Random Quote</button>
+            <h5 class="card-title" id="character-name">Character:</h5>
+            <p class="card-text" id="quote-p">Quote:</p>
+            <button  class="btn btn-primary" id="generate-bttn">Generate Random Quote</button>
          </div>
       </div>
       <div class="card" id ="header-box-div2">
          <h5 class="card-header">Search Quotes By Character Name:</h5>
          <div class="card-body">
-            <input type="text" placeholder="Search..." id = "search">
+            <input type="text" placeholder="Search..." id="search">
             <button id="search-button" type="button" class="btn btn-primary"></button>
-            <div id = "searched-character-title">
-               <div id = "search-char-quotes">
-                  <ul id = "searched-quotes"></ul>
+            <div id="searched-character-title">
+               <div id="search-char-quotes">
+                  <ul id="searched-quotes"></ul>
                </div>
             </div>
          </div>
       </div>
    </body>
-   <footer class="page-footer font-small blue">
+   <footer class="page-footer">
       <div class="footer">
          <a style="cursor:pointer" href="https://animechan.vercel.app" target="_blank">API Used For Generator</a>
+         <select id"selector" onchange="handleOnChangeEvent(this.value)">
+            <option class="background-change" value="images/blossom.jpg">Select An Image (Default)</option>
+            <option class="background-change" value="images/background1.jpg">image 1</option>
+            <option class="background-change" value="images/background2.jpg">image 2</option>
+            <option class="background-change" value="images/background3.jpg">image 3</option>
+            <option class="background-change" value="images/background4.jpg">image 4</option>
+            <option class="background-change" value="images/background5.jpg">image 5</option>
+            <option class="background-change" value="images/background6.jpg">image 6</option>
+            <option class="background-change" value="">grey</option>
+         </select>
       </div>
    </footer>
 </html>

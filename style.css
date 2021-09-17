@@ -9,7 +9,7 @@ body{
     margin-left: 40px;
     margin-right: 40px;
     background-color: #222222;
-    background-image: url('assets/cherry_blossom_2230x1400.jpg');
+    background-image: url('images/blossom.jpg');
     background-size: cover;
     background-repeat: no-repeat;
 }
@@ -83,5 +83,16 @@ a:link, a:visited {
   
 a:hover, a:active {
     background-color: #222222;
+    color: white;
+}
+
+.background-change{
+    background-color: #555555;
+    color: white;
+}
+
+select{
+    margin-left: auto;
+    background-color: #555555;
     color: white;
 }

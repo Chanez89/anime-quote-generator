@@ -64,7 +64,11 @@ const renderCharacter = (character) => {
     let li = document.createElement("li")
     li.innerHTML = `${character.character.bold()}: ${character.quote}`
     charQuotesContainer.appendChild(li)
-};
+}
+
+function handleOnChangeEvent(x){
+    document.body.style.backgroundImage = "url('"+x+"')" 
+}
 
 generateBttn.addEventListener('click', fetchData)
 
