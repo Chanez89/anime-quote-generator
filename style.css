@@ -9,11 +9,16 @@ body{
     margin-left: 40px;
     margin-right: 40px;
     background-color: #222222;
+    background-image: url('assets/cherry_blossom_2230x1400.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 #header{
     text-align: center;
     padding-bottom: 25px;
+    /* font-weight: bold;
+    text-shadow: 2px 2px black; */
     color: white;
 }
 
@@ -29,6 +34,7 @@ body{
 
 #header-box-div2{
     margin-top: 50px;
+    margin-bottom: 80px;
 }
 
 #searched-quotes{
