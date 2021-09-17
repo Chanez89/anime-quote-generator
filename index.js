@@ -1,6 +1,7 @@
 const BASE_URL = 'https://animechan.vercel.app/api/random'
 const SEARCH_URL = 'https://animechan.vercel.app/api/quotes/character?name='
 
+let header = document.getElementById('header')
 let animeHeader = document.getElementById('anime-header')
 let charName = document.getElementById('character-name')
 let quote = document.getElementById('quote-p')
@@ -67,7 +68,13 @@ const renderCharacter = (character) => {
 }
 
 function handleOnChangeEvent(x){
-    document.body.style.backgroundImage = "url('"+x+"')" 
+    document.body.style.backgroundImage = "url('"+x+"')"
+
+    if (x != 'images/blossom.jpg' && x != "" && x != 'images/background2.jpg') {
+        header.classList.add('headerbg')
+    } else {
+        header.classList.remove('headerbg')
+    }
 }
 
 generateBttn.addEventListener('click', fetchData)
